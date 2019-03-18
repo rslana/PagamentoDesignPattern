@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "askForPassword": true,
+      "connectionTimeout": 30,
+      "database": "design_pattern_ecommerce",
+      "dialect": "MySQL",
+      "name": "Localhost",
+      "port": 3306,
+      "server": "127.0.0.1",
+      "username": "root"
+    }
+  ]
+}
