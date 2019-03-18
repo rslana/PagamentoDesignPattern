@@ -30,6 +30,7 @@ hs_err_pid*
 ## ignoring target file
 target/
 
+<<<<<<< HEAD
 /build/
 /dist/
 
@@ -42,3 +43,7 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+=======
+# End of https://www.gitignore.io/api/java,java-web
+/build/
+>>>>>>> 9b602e2fb94ca87a3432a522e9bf3a66a0c51136
