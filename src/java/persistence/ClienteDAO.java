@@ -31,12 +31,13 @@ public class ClienteDAO {
         Statement st = conn.createStatement();
 
         try {
-            String sql = "INSERT INTO cliente (nome, email, senha, endereco) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO cliente (nome, email, senha, rua, cidade) VALUES (?,?,?,?,?)";
             PreparedStatement comando = conn.prepareStatement(sql);
             comando.setString(1, cliente.getNome());
             comando.setString(2, cliente.getEmail());
             comando.setString(3, cliente.getSenha());
-            comando.setString(4, cliente.getEndereco());
+            comando.setString(4, cliente.getRua());
+            comando.setString(5, cliente.getCidade());
             comando.execute();
 
         } catch (SQLException e) {
@@ -72,7 +73,8 @@ public class ClienteDAO {
                     rs.getString("nome"),
                     rs.getString("email"),
                     rs.getString("senha"),
-                    rs.getString("endereco")
+                    rs.getString("rua"),
+                    rs.getString("cidade")
             );
         } catch (SQLException e) {
             e.printStackTrace();
@@ -82,7 +84,7 @@ public class ClienteDAO {
         return cliente;
     }
 
-    public static List<Cliente> listContacts(int page) throws SQLException, ClassNotFoundException {
+    public static List<Cliente> listClientes(int page) throws SQLException, ClassNotFoundException {
         Connection conn = DatabaseLocator.getInstance().getConnection();
         Statement st = conn.createStatement();
         List<Cliente> clientes = new ArrayList<Cliente>();
@@ -94,7 +96,8 @@ public class ClienteDAO {
                         rs.getString("email"),
                         rs.getString("nome"),
                         rs.getString("senha"),
-                        rs.getString("endereco")
+                        rs.getString("rua"),
+                        rs.getString("cidade")
                 );
                 clientes.add(contato);
             }
@@ -118,7 +121,8 @@ public class ClienteDAO {
                     rs.getString("email"),
                     rs.getString("nome"),
                     rs.getString("senha"),
-                    rs.getString("endereco")
+                    rs.getString("rua"),
+                    rs.getString("cidade")
             );
         } catch (SQLException e) {
             e.printStackTrace();

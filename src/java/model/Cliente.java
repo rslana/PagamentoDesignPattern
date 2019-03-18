@@ -19,21 +19,24 @@ public class Cliente {
     String nome;
     String email;
     String senha;
-    String endereco;
+    String rua;
+    String cidade;
 
-    public Cliente(int id, String nome, String email, String senha, String endereco) {
+    public Cliente(int id, String nome, String email, String senha, String rua,String cidade) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.endereco = endereco;
+        this.rua = rua;
+        this.cidade = cidade;
     }
     
-    public Cliente(String nome, String email, String senha, String endereco) {
+    public Cliente(String nome, String email, String senha, String rua,String cidade) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.endereco = endereco;
+        this.rua = rua;
+        this.cidade = cidade;
     }
 
     public int getId() {
@@ -68,12 +71,20 @@ public class Cliente {
         this.senha = senha;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getRua() {
+        return rua;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
     
     public static Cliente obterCliente(int id) throws ClassNotFoundException {

@@ -19,16 +19,15 @@ public class Produto {
     String nome;
     double preco;
 
-    public Produto(int id, String nome, double valor) {
+    public Produto(int id, String nome, double preco) {
         this.id = id;
         this.nome = nome;
-        this.preco = valor;
+        this.preco = preco;
     }
     
-     public Produto(String nome, double valor) {
-        this.id = id;
+     public Produto(String nome, double preco) {
         this.nome = nome;
-        this.preco = valor;
+        this.preco = preco;
     }
 
     public int getId() {

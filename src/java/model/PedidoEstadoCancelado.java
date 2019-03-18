@@ -53,7 +53,7 @@ public class PedidoEstadoCancelado implements PedidoEstado {
 
     @Override
     public String getEstado() {
-        return "Pedido cancelado";
+        return this.getClass().getName();
     }
     
 }
