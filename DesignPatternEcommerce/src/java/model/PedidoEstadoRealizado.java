@@ -53,6 +53,6 @@ public class PedidoEstadoRealizado implements PedidoEstado{
 
     @Override
     public String getEstado() {
-        return "Pedido realizado";
+        return this.getClass().getName();
     }
 }

@@ -53,7 +53,7 @@ public class PedidoEstadoEmTransporte implements PedidoEstado {
 
     @Override
     public String getEstado() {
-        return "Pedido em transporte";
+        return this.getClass().getName();
     }
     
 }

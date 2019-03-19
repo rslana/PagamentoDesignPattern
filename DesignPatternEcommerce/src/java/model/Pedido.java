@@ -30,8 +30,8 @@ public class Pedido{
         this.produto = produto;
     }
     
-    public Pedido(PedidoEstado estado, String dataCompra, Cliente cliente, Produto produto) {
-        this.estado = estado;
+    public Pedido(String dataCompra, Cliente cliente, Produto produto) {
+        this.estado = new PedidoEstadoRealizado();
         this.dataCompra = dataCompra;
         this.cliente = cliente;
         this.produto = produto;

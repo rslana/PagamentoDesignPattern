@@ -10,7 +10,7 @@ USE `design_pattern_ecommerce` ;
 -- Table `design_pattern_ecommerce`.`cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `design_pattern_ecommerce`.`cliente` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NULL,
   `email` VARCHAR(45) NULL,
   `rua` VARCHAR(50) NULL,
@@ -24,7 +24,7 @@ ENGINE = InnoDB;
 -- Table `design_pattern_ecommerce`.`produto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `design_pattern_ecommerce`.`produto` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NULL,
   `preco` DOUBLE NULL,
   PRIMARY KEY (`id`))
@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 -- Table `design_pattern_ecommerce`.`pedido`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `design_pattern_ecommerce`.`pedido` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `estado` VARCHAR(45) NULL,
   `data_compra` VARCHAR(45) NULL,
   `produto_id` INT NOT NULL,

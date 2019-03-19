@@ -1,5 +1,6 @@
-<!-- <%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%> -->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 
@@ -49,10 +50,10 @@
         </div>
         <div class='corpo'>
             <h1>Cadastro de Pedido</h1>
-            <form action="FrontController?action=GravarContato" method="post">
+            <form action="FrontController?action=GravarPedido" method="post">
                 <div class='corpo-input'>
                     <label for='textNome'>Data da Compra</label><br />
-                    <input type="text" name="textDataCompra" /><br />
+                    <input type="date" name="textDataCompra" /><br />
                 </div>
                 <div class='corpo-input'>
                     <label for='clienteId'>Cliente</label><br>

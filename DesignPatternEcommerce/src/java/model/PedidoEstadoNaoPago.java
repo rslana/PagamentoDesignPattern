@@ -53,7 +53,7 @@ public class PedidoEstadoNaoPago implements PedidoEstado{
 
     @Override
     public String getEstado() {
-        return "Pedido não pago";
+        return this.getClass().getName();
     }
     
 }

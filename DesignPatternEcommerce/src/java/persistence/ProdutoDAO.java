@@ -79,12 +79,34 @@ public class ProdutoDAO {
         return produto;
     }
 
-    public static List<Produto> listContacts(int page) throws SQLException, ClassNotFoundException {
+    public static List<Produto> listProdutos(int page) throws SQLException, ClassNotFoundException {
         Connection conn = DatabaseLocator.getInstance().getConnection();
         Statement st = conn.createStatement();
         List<Produto> produtos = new ArrayList<Produto>();
         try {
             ResultSet rs = st.executeQuery("SELECT * FROM produto LIMIT " + ((page - 1) * 3) + "," + (((page - 1) * 3) + 3));
+            while (rs.next()) {
+                Produto contato = new Produto(
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getDouble("preco")
+                );
+                produtos.add(contato);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeResources(conn, st);
+        }
+        return produtos;
+    }
+    
+    public static List<Produto> listProdutos() throws SQLException, ClassNotFoundException {
+        Connection conn = DatabaseLocator.getInstance().getConnection();
+        Statement st = conn.createStatement();
+        List<Produto> produtos = new ArrayList<Produto>();
+        try {
+            ResultSet rs = st.executeQuery("SELECT * FROM produto");
             while (rs.next()) {
                 Produto contato = new Produto(
                         rs.getInt("id"),
@@ -120,6 +142,7 @@ public class ProdutoDAO {
         }
         return produto;
     }
+    
 
     public static void closeResources(Connection conn, Statement st) {
         try {

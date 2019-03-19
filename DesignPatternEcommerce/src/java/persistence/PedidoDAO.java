@@ -38,7 +38,7 @@ public class PedidoDAO {
         Statement st = conn.createStatement();
 
         try {
-            String sql = "INSERT INTO pedido (estado, dataCompra, cliente_id,produto_id) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO pedido (estado, data_compra, cliente_id,produto_id) VALUES (?,?,?,?)";
             PreparedStatement comando = conn.prepareStatement(sql);
             comando.setString(1, pedido.getEstado().getEstado());
             comando.setString(2, pedido.getDataCompra());

@@ -53,7 +53,7 @@ public class PedidoEstadoEmSeparacao implements PedidoEstado {
 
     @Override
     public String getEstado() {
-        return "Pedido em separação";
+        return this.getClass().getName();
     }
     
 }

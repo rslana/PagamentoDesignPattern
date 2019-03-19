@@ -108,6 +108,31 @@ public class ClienteDAO {
         }
         return clientes;
     }
+    
+    public static List<Cliente> listClientes() throws SQLException, ClassNotFoundException {
+        Connection conn = DatabaseLocator.getInstance().getConnection();
+        Statement st = conn.createStatement();
+        List<Cliente> clientes = new ArrayList<Cliente>();
+        try {
+            ResultSet rs = st.executeQuery("SELECT * FROM cliente");
+            while (rs.next()) {
+                Cliente contato = new Cliente(
+                        rs.getInt("id"),
+                        rs.getString("email"),
+                        rs.getString("nome"),
+                        rs.getString("senha"),
+                        rs.getString("rua"),
+                        rs.getString("cidade")
+                );
+                clientes.add(contato);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeResources(conn, st);
+        }
+        return clientes;
+    }
 
     public static Cliente obterCliente(int id) throws ClassNotFoundException, SQLException {
         Connection conn = DatabaseLocator.getInstance().getConnection();
